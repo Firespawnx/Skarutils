@@ -189,25 +189,30 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 
+
+
+
+
 #Skar functions
     function home() {
         clear
 
-        echo "┌──────────────────────────────────────────┐"
-        echo "│ ____   _                                 │"
-        echo "│/ ___| | | __ __ _  _ __                  │"
-        echo "│\___ \ | |/ // _' || '__|                 │"
-        echo "│ ___) ||   <| (_| || |                    │"
-        echo "│|____/ |_|\_\\__,_||_|                     │"
-        echo "│ _   _  _    _  _                         │"
-        echo "│| | | || |_ (_)| | ___                ┌───┤"
-        echo "│| | | || __|| || |/ __|               │V.1│"
-        echo "│| |_| || |_ | || |\__ \ ┌─────────────┘∙∙∙│"
-        echo "│ \___/  \__||_||_||___/ │By Skandar ######│"
-        echo "└────────────────────────┴─────────────────┘"
-        echo "  ───────────────────────                   "
-        echo "   HELP for instructions                    "
-        echo "  ───────────────────────                   "
+        printf '%s\n' \
+        "┌──────────────────────────────────────────┐" \
+        "│ ____   _                                 │" \
+        "│/ ___| | | __ __ _  _ __                  │" \
+        "│\___ \ | |/ // _' || '__|                 │" \
+        "│ ___) ||   <| (_| || |                    │" \
+        "│|____/ |_|\_\\__,_||_|                     │" \
+        "│ _   _  _    _  _                         │" \
+        "│| | | || |_ (_)| | ___                ┌───┤" \
+        "│| | | || __|| || |/ __|               │V.2│" \
+        "│| |_| || |_ | || |\__ \ ┌─────────────┘∙∙∙│" \
+        "│ \___/  \__||_||_||___/ │By Skandar ######│" \
+        "└────────────────────────┴─────────────────┘" \
+        "  ───────────────────────                   " \
+        "   HELP for instructions                    " \
+        "  ───────────────────────                   " 
         
         # Check if script is being sourced
         if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
@@ -218,57 +223,66 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
         clear
         
-        echo "  ____                                                _       "
-        echo " / ___| ___   _ __ ___   _ __ ___    __ _  _ __    __| | ___  "
-        echo "| |    / _ \ | '_ ' _ \ | '_ ' _ \  / _' || '_ \  / _' |/ __| "
-        echo "| |___| (_) || | | | | || | | | | || (_| || | | || (_| |\__ \ "
-        echo " \____|\___/ |_| |_| |_||_| |_| |_| \__,_||_| |_| \__,_||___/ "
-        echo "──┬────────────────────────────────────────────────────────── "
-        echo "  │home = clears the terminal andreturns to the home badge    "
-        echo "  ├────────────────────────────────────────────────────────   "
-        echo "  │HELP = Gets you here                                       "
-        echo "  ├─────────────────────                                      "
-        echo "  │netkeychain                                                "
-        echo "  └───┬────────────────────────────────                       "
-        echo "      │ls = displays all saved servers                        "
-        echo "      ├─────────────────────────────────────                  "
-        echo "      │add = save a server to your keychain                   "
-        echo "  ┌───┴─────────────────────────────────────                  "
-        echo "  │server                                                     "
-        echo "  └───┬───────────────────────────────────────────────────    "
-        echo "      │ssh = connects to an ssh server from your keychain     "
-        echo "      ├─────────────────────────────────────────────────────  "
-        echo "      │sftp = connects to an sftp server from your keychain   "
-        echo "  ┌───┴─────────────────────────────────────────────────────  "
-        echo "  |macro                                                      "
-        echo "  └───┬─────────────────────────────────────────────          "
-        echo "      |create = saves commands to be executed later           "
-        echo "      ├─────────────────────────────────────────────          "
-        echo "      |leave blank = executes your saved macro                "
-        echo "  ┌───┴────────────────────────────────────────               "
-        echo "  |lsg                                                        "
-        echo "  └───┬─────────────────────────────────────                  "
-        echo "      |an ASCII graphical alternative to ls                   "
-        echo "      └─────────────────────────────────────                  "
-        echo "                                                              "
-        echo "  ┌──────────────────────────────────                         "
-        echo "  |Prexisting but modified commands:                          "
-        echo "  ├──────────────────────────────────                         "
-        echo "  |pwd                                                        "
-        echo "  └───┬────────────────────────────────────────────────────── "
-        echo "      |adds a little bit of text, and colors in the location  "
-        echo "  ┌───┴────────────────────────────────────────────────────── "
-        echo "  |clear                                                      "
-        echo "  └───┬───────────────────────────────────────────────────    "
-        echo "      |displays the home badge once the terminal is empty     "
-        echo "  ┌───┴───────────────────────────────────────────────────    "
-        echo "  |reset                                                      "
-        echo "  └───┬───────────────────────────────────────────────────    "
-        echo "      |displays the home badge once the terminal is reset     "
-        echo "      └───────────────────────────────────────────────────    "
+        printf '%s\n' \
+        "  ____                                                _       " \
+        " / ___| ___   _ __ ___   _ __ ___    __ _  _ __    __| | ___  " \
+        "| |    / _ \ | '_ ' _ \ | '_ ' _ \  / _' || '_ \  / _' |/ __| " \
+        "| |___| (_) || | | | | || | | | | || (_| || | | || (_| |\__ \ " \
+        " \____|\___/ |_| |_| |_||_| |_| |_| \__,_||_| |_| \__,_||___/ " \
+        "──┬────────────────────────────────────────────────────────── " \
+        "  |SPACEBAR to advance, Q to quit.                            " \
+        "  └────────────────────────────────                           " \
+        "                                                              " \
+        "  ┌───────────────                                            " \
+        "  │ New commands:                                             " \
+        "  ├────────────────────────────────────────────────────────   " \
+        "  │home = clears the terminal andreturns to the home badge    " \
+        "  ├────────────────────────────────────────────────────────   " \
+        "  │HELP = Gets you here                                       " \
+        "  ├─────────────────────                                      " \
+        "  │netkeychain                                                " \
+        "  └───┬────────────────────────────────                       " \
+        "      │ls = displays all saved servers                        " \
+        "      ├─────────────────────────────────────                  " \
+        "      │add = save a server to your keychain                   " \
+        "  ┌───┴─────────────────────────────────────                  " \
+        "  │server                                                     " \
+        "  └───┬───────────────────────────────────────────────────    " \
+        "      │ssh = connects to an ssh server from your keychain     " \
+        "      ├─────────────────────────────────────────────────────  " \
+        "      │sftp = connects to an sftp server from your keychain   " \
+        "  ┌───┴─────────────────────────────────────────────────────  " \
+        "  |macro                                                      " \
+        "  └───┬─────────────────────────────────────────────          " \
+        "      |create = saves commands to be executed later           " \
+        "      ├─────────────────────────────────────────────          " \
+        "      |leave blank = executes your saved macro                " \
+        "  ┌───┴────────────────────────────────────────               " \
+        "  |lsg = an ASCII graphical alternative to ls                 " \
+        "  └───────────────────────────────────────────                " \
+        "                                                              " \
+        "  ┌──────────────────────────────────                         " \
+        "  |Prexisting but modified commands:                          " \
+        "  ├──────────────────────────────────                         " \
+        "  |pwd                                                        " \
+        "  └───┬────────────────────────────────────────────────────── " \
+        "      |adds a little bit of text, and colors in the location  " \
+        "  ┌───┴────────────────────────────────────────────────────── " \
+        "  |clear                                                      " \
+        "  └───┬───────────────────────────────────────────────────    " \
+        "      |displays the home badge once the terminal is empty     " \
+        "  ┌───┴───────────────────────────────────────────────────    " \
+        "  |reset                                                      " \
+        "  └───┬───────────────────────────────────────────────────    " \
+        "      |displays the home badge once the terminal is reset     " \
+        "  ┌───┴───────────────────────────────────────────────────    " \
+        "  |mkdir                                                      " \
+        "  └───┬───────────────────────────────────────────────────    " \
+        "      |not only creates a directory, but cd's to it after     " \
+        "      └───────────────────────────────────────────────────    " | less
+
+        home
     }
-    alias clear='command clear && home'
-    alias reset='command clear && home'
 #End
 
 
@@ -289,13 +303,14 @@ ___text_box() { #___text_box "text" "frame 1-4"
         elif [[ "$1" = "create" ]]; then
             clear
             
-            echo " ____                                                                                 "
-            echo "|  _ \  _ __  ___    __ _  _ __  __ _  _ __ ___    _ __ ___    __ _   ___  _ __  ___  "
-            echo "| |_) || '__|/ _ \  / _' || '__|/ _' || '_ ' _ \  | '_ ' _ \  / _' | / __|| '__|/ _ \ "
-            echo "|  __/ | |  | (_) || (_| || |  | (_| || | | | | | | | | | | || (_| || (__ | |  | (_) |"
-            echo "|_|    |_|   \___/  \__, ||_|   \__,_||_| |_| |_| |_| |_| |_| \__,_| \___||_|   \___/ "
-            echo "                    |___/                                                             "
-            
+            printf '%s\n' \
+            " ____                                                                                 " \
+            "|  _ \  _ __  ___    __ _  _ __  __ _  _ __ ___    _ __ ___    __ _   ___  _ __  ___  " \
+            "| |_) || '__|/ _ \  / _' || '__|/ _' || '_ ' _ \  | '_ ' _ \  / _' | / __|| '__|/ _ \ " \
+            "|  __/ | |  | (_) || (_| || |  | (_| || | | | | | | | | | | || (_| || (__ | |  | (_) |" \
+            "|_|    |_|   \___/  \__, ||_|   \__,_||_| |_| |_| |_| |_| |_| \__,_| \___||_|   \___/ " \
+            "                    |___/                                                             "
+
             echo ""
             echo "type in the commands you'd like to save, separated by \" && \" "
             echo ""
@@ -528,7 +543,21 @@ ___text_box() { #___text_box "text" "frame 1-4"
             # Print the result
             echo -e "Current directory: $output"
     }
-    alias pwd="___pwd_better"
+    function mkdir_better() {
+        # Check if at least one argument is provided
+        if [ $# -eq 0 ]; then
+            echo "Usage: mkdir_better <directory> [options...]"
+            return 1
+        fi
+        
+        # Use mkdir with all provided arguments
+        if mkdir "$@"; then
+            # If mkdir succeeded, cd to the first argument (the directory name)
+            cd "${1}"
+        else
+            echo "Failed to create directory"
+        fi
+    }
 #End
 
 
@@ -605,12 +634,13 @@ ___text_box() { #___text_box "text" "frame 1-4"
         clear
 
         if [ "$1" = "ls" ]; then
-            echo " ____                          _                                           "
-            echo "/ ___|   __ _ __   __ ___   __| |  ___   ___  _ __ __   __ ___  _ __  ___  "
-            echo "\___ \  / _' |\ \ / // _ \ / _' | / __| / _ \| '__|\ \ / // _ \| '__|/ __| "
-            echo " ___) || (_| | \ V /|  __/| (_| | \__ \|  __/| |    \ V /|  __/| |   \__ \ "
-            echo "|____/  \__,_|  \_/  \___| \__,_| |___/ \___||_|     \_/  \___||_|   |___/ "
-            echo "────────────────────────────────────────────────────────────────────────── "
+            printf '%s\n' \
+            " ____                          _                                           " \
+            "/ ___|   __ _ __   __ ___   __| |  ___   ___  _ __ __   __ ___  _ __  ___  " \
+            "\___ \  / _' |\ \ / // _ \ / _' | / __| / _ \| '__|\ \ / // _ \| '__|/ __| " \
+            " ___) || (_| | \ V /|  __/| (_| | \__ \|  __/| |    \ V /|  __/| |   \__ \ " \
+            "|____/  \__,_|  \_/  \___| \__,_| |___/ \___||_|     \_/  \___||_|   |___/ " \
+            "────────────────────────────────────────────────────────────────────────── "
             
             echo ""
             
@@ -638,35 +668,37 @@ ___text_box() { #___text_box "text" "frame 1-4"
             done
             
         elif [ "$1" = "add" ]; then
-            echo "    _        _      _                                     "
-            echo "   / \    __| |  __| |  ___   ___  _ __ __   __ ___  _ __ "
-            echo "  / _ \  / _' | / _' | / __| / _ \| '__|\ \ / // _ \| '__|"
-            echo " / ___ \| (_| || (_| | \__ \|  __/| |    \ V /|  __/| |   "
-            echo "/_/   \_\\__,_| \__,_| |___/ \___||_|     \_/  \___||_|   "
-            echo "──────────────────────────────────────────────────────────"
+            printf '%s\n' \
+            "    _        _      _                                     " \
+            "   / \    __| |  __| |  ___   ___  _ __ __   __ ___  _ __ " \
+            "  / _ \  / _' | / _' | / __| / _ \| '__|\ \ / // _ \| '__|" \
+            " / ___ \| (_| || (_| | \__ \|  __/| |    \ V /|  __/| |   " \
+            "/_/   \_\\__,_| \__,_| |___/ \___||_|     \_/  \___||_|   " \
+            "──────────────────────────────────────────────────────────"
             
-            echo ""
-            
-            echo "Notes:"
-            echo "for security reasons, passwords will not be saved in the keychain."
-            echo "if you are on the same network as the machine you're connecting to, you may not need to add a port."
-            
-            echo ""
-            
-            echo "Type the following format to add a server to your Keychain:"
-            echo "ServerAlias accountname@ipv4:port"
-            echo ""
-            read -r user_input
+            printf '%s\n' \
+
+            "Notes:" \
+            "for security reasons, passwords will not be saved in the keychain.                                 " \
+            "if you are on the same network as the machine you're connecting to, you may not need to add a port." \
+            "                                                                                                   " \
+            "Type the following format to add a server to your Keychain:                                        " \
+            "ServerAlias accountname@ipv4:port                                                                  " \
+            "                                                                                                   " 
+
+            read -r user_inputprintf '%s\n' \
             ___keychain_write "ServerKeychain" "$ServerKeychain,$user_input"
             echo "New ServerKeychain entry: $user_input"
 
         elif [ "$1" = "del" ]; then
-            echo " ____                                                                         "
-            echo "|  _ \  ___  _ __ ___    ___ __   __ ___   ___   ___  _ __ __   __ ___  _ __  "
-            echo "| |_) |/ _ \| '_ ' _ \  / _ \\ \ / // _ \ / __| / _ \| '__|\ \ / // _ \| '__| "
-            echo "|  _ <|  __/| | | | | || (_) |\ V /|  __/ \__ \|  __/| |    \ V /|  __/| |    "
-            echo "|_| \_\\___||_| |_| |_| \___/  \_/  \___| |___/ \___||_|     \_/  \___||_|    "
-            echo "───────────────────────────────────────────────────────────────────────────── "
+        
+            printf '%s\n' \
+            " ____                                                                         " \
+            "|  _ \  ___  _ __ ___    ___ __   __ ___   ___   ___  _ __ __   __ ___  _ __  " \
+            "| |_) |/ _ \| '_ ' _ \  / _ \\ \ / // _ \ / __| / _ \| '__|\ \ / // _ \| '__| " \
+            "|  _ <|  __/| | | | | || (_) |\ V /|  __/ \__ \|  __/| |    \ V /|  __/| |    " \
+            "|_| \_\\___||_| |_| |_| \___/  \_/  \___| |___/ \___||_|     \_/  \___||_|    " \
+            "───────────────────────────────────────────────────────────────────────────── "
             
             echo ""
             
@@ -706,6 +738,21 @@ ___text_box() { #___text_box "text" "frame 1-4"
             echo "Removed server: $user_input"
         fi
     }
+#End
+
+
+
+#Aliases (existing but modified)
+    
+    #Does not hav source code, references functions and commands.
+
+    alias pwd="___pwd_better"
+
+    alias mkdir="___mkdir_better"
+
+    alias clear="command clear && home"
+    alias reset="command reset && home"
+    
 #End
 
 
