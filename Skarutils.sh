@@ -189,10 +189,6 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 
-
-
-
-
 #Skar functions
     function home() {
         clear
@@ -212,7 +208,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
         "└────────────────────────┴─────────────────┘" \
         "  ───────────────────────                   " \
         "   HELP for instructions                    " \
-        "  ───────────────────────                   " 
+        "  ───────────────────────                   "
         
         # Check if script is being sourced
         if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
@@ -259,7 +255,13 @@ ___text_box() { #___text_box "text" "frame 1-4"
         "      |leave blank = executes your saved macro                " \
         "  ┌───┴────────────────────────────────────────               " \
         "  |lsg = an ASCII graphical alternative to ls                 " \
-        "  └───────────────────────────────────────────                " \
+        "  ├───────────────────────────────────────────                " \
+        "  |backup                                                     " \
+        "  └───┬────────────────────────────────────────────────────   " \
+        "      |filename = backs up a file in the current directory    " \
+        "      ├────────────────────────────────────────────────────   " \
+        "      |filname path = backs up a file to another directory    " \
+        "      └────────────────────────────────────────────────────   " \
         "                                                              " \
         "  ┌──────────────────────────────────                         " \
         "  |Prexisting but modified commands:                          " \
@@ -326,7 +328,17 @@ ___text_box() { #___text_box "text" "frame 1-4"
         fi
     
     }
-    
+    function backup() {
+    if [ -z "$2" ]; then # This directory
+        local file_content=$(cat "$1")
+        echo "$file_content" > "$1.backup"
+        echo "Backup file created successfully at ./$1.backup"
+    elif [ -n "$2" ]; then # Another directory
+        local file_content=$(cat "$1")
+        echo "$file_content" > "$2/$1.backup"
+        echo "Backup file created successfully at $2/$1.backup"
+    fi
+}
 #End
 
 
@@ -691,7 +703,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
             echo "New ServerKeychain entry: $user_input"
 
         elif [ "$1" = "del" ]; then
-        
+
             printf '%s\n' \
             " ____                                                                         " \
             "|  _ \  ___  _ __ ___    ___ __   __ ___   ___   ___  _ __ __   __ ___  _ __  " \
