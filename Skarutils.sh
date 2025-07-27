@@ -190,7 +190,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 #Skar functions
-    function home() {
+    function home {
         clear
 
         printf '%s\n' \
@@ -261,7 +261,9 @@ ___text_box() { #___text_box "text" "frame 1-4"
         "      |filename = backs up a file in the current directory    " \
         "      ├────────────────────────────────────────────────────   " \
         "      |filname path = backs up a file to another directory    " \
-        "      └────────────────────────────────────────────────────   " \
+        "  ┌───┴────────────────────────────────────────────           " \
+        "  |.bashrc reset = resets your .bashrc config file            " \
+        "  └────────────────────────────────────────────────           " \
         "                                                              " \
         "  ┌──────────────────────────────────                         " \
         "  |Prexisting but modified commands:                          " \
@@ -290,7 +292,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 #Handy
-    function macro() {
+    function macro () {
         if [[ -z "$1" ]]; then
             echo "executing macro..."
             echo ""
@@ -328,17 +330,30 @@ ___text_box() { #___text_box "text" "frame 1-4"
         fi
     
     }
-    function backup() {
-    if [ -z "$2" ]; then # This directory
-        local file_content=$(cat "$1")
-        echo "$file_content" > "$1.backup"
-        echo "Backup file created successfully at ./$1.backup"
-    elif [ -n "$2" ]; then # Another directory
-        local file_content=$(cat "$1")
-        echo "$file_content" > "$2/$1.backup"
-        echo "Backup file created successfully at $2/$1.backup"
-    fi
-}
+    function .bashrc () {
+        
+        if [ "$1" = "reset" ]; then
+        
+                    
+
+            # Display the names
+            local name
+            for name in "${ServerTemp2[@]}"; do
+                echo "$name"
+            done
+            ___text_box "WARNING: you need to be in the directory .bashrc is normally placed in. This is usually /home, or /home/username" 4
+            
+            echo""
+            echo "Continue? Y/n"
+
+            read user_input
+            
+                if [ "$user_input" = "Y" ]; then
+                    echo "reseting .bashrc file from /etc/skel/.bashrc (requires sudo permission)"
+                    sudo cp /etc/skel/.bashrc ./.bashrc
+                fi
+        fi
+    }
 #End
 
 
@@ -555,7 +570,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
             # Print the result
             echo -e "Current directory: $output"
     }
-    function mkdir_better() {
+    function mkdir_better () {
         # Check if at least one argument is provided
         if [ $# -eq 0 ]; then
             echo "Usage: mkdir_better <directory> [options...]"
@@ -569,6 +584,17 @@ ___text_box() { #___text_box "text" "frame 1-4"
         else
             echo "Failed to create directory"
         fi
+    }
+    function backup () {
+            if [ -z "$2" ]; then # This directory
+                local file_content=$(cat "$1")
+                echo "$file_content" > "$1.backup"
+                echo "Backup file created successfully at ./$1.backup"
+            elif [ -n "$2" ]; then # Another directory
+                local file_content=$(cat "$1")
+                echo "$file_content" > "$2/$1.backup"
+                echo "Backup file created successfully at $2/$1.backup"
+            fi
     }
 #End
 
@@ -642,7 +668,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
             done
         fi
     }
-    function netkeychain() {
+    function netkeychain () {
         clear
 
         if [ "$1" = "ls" ]; then
