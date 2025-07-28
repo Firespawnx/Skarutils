@@ -213,8 +213,9 @@ ___text_box() { #___text_box "text" "frame 1-4"
         if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
             ___text_box "⚠ You must run \". ${0}\" to load the commands. ⚠" 4
         else
-            if ping -c 1 google.com &> /dev/null; then
+            if ping -c 1 google.com &> /dev/null && [ "$UpdatedYet" = "False" ]; then
                 echo ""
+                UpdatedYet="True"
                 skarupdate
             fi
         fi
@@ -335,6 +336,10 @@ ___text_box() { #___text_box "text" "frame 1-4"
                     ___var_overwrite "SavedMacro" "$(cat ./tempforskar-SavedMacro.txt)"
                     rm -f ./tempforskar-ServerKeychain.txt ./tempforskar-SavedMacro.txt
                 fi
+            else
+
+            echo "there are no updates available"
+
             fi
         else
             echo "Please connect to the internet to update."
@@ -658,4 +663,6 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 #Startup: initialize
+UpdatedYet="False"
+
 home
