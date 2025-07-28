@@ -311,7 +311,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 
-            difference=$(diff $SCRIPT_FILE <(curl -s https://raw.githubusercontent.com/Firespawnx/Skarutils/main/Skarutils.sh))
+            difference=$(diff $SCRIPT_FILE <(curl https://raw.githubusercontent.com/Firespawnx/Skarutils/main/Skarutils.sh))
             if [[ "$difference" != "" ]]; then
                 echo "There is a newer version of Skarutils. Would you like to install it?"
                 echo "Update? Y/n"
@@ -320,7 +320,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
                 if [[ "$user_input" = "Y" ]]; then
 
-                    curl -s https://raw.githubusercontent.com/Firespawnx/Skarutils/main/Skarutils.sh > $SCRIPT_FILE
+                    curl https://raw.githubusercontent.com/Firespawnx/Skarutils/main/Skarutils.sh > $SCRIPT_FILE
                     
 
                     ___var_overwrite "ServerKeychain" "$(cat ./tempforskar-ServerKeychain.txt)"
