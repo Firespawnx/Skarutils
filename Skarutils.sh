@@ -5,8 +5,8 @@
 
 
 #Persistent storage:
-ServerKeychain=""
-SavedMacro=""
+ServerKeychain="BLANK"
+SavedMacro="BLANK"
 
 
 #Replaces $0 when the file is sourced
@@ -307,8 +307,8 @@ ___text_box() { #___text_box "text" "frame 1-4"
                 #remove bias from the variables with a temp file
                 echo "$ServerKeychain" > tempforskar-ServerKeychain.txt
                 echo "$SavedMacro" > tempforskar-SavedMacro.txt
-                ___var_overwrite "ServerKeychain" ""
-                ___var_overwrite "SavedMacro" ""
+                ___var_overwrite "ServerKeychain" "BLANK"
+                ___var_overwrite "SavedMacro" "BLANK"
 
 
 
