@@ -219,7 +219,7 @@ ___text_box() { #___text_box "text" "frame 1-4"
                 skarupdate
             fi
         fi
-        
+
         home
         
     }
