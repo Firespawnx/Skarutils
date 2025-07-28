@@ -337,6 +337,11 @@ ___text_box() { #___text_box "text" "frame 1-4"
             else
 
             echo "there are no updates available"
+            
+            #reset variables
+            ___var_overwrite "ServerKeychain" "$(cat ./tempforskar-ServerKeychain.txt)"
+            ___var_overwrite "SavedMacro" "$(cat ./tempforskar-SavedMacro.txt)"
+            rm -f ./tempforskar-ServerKeychain.txt ./tempforskar-SavedMacro.txt
 
             fi
         else
