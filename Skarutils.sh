@@ -664,7 +664,6 @@ ___text_box() { #___text_box "text" "frame 1-4"
 
 
 
-
 #Startup: initialize
 UpdatedYet="False"
 
